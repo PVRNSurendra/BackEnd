@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup to HomeRental</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f8f9fa; /* Light background color */
+            margin: 0;
+            padding: 0px; /* Padding around the body */
+        }
+
+        .signup-page {
+            max-width: 600px; /* Increase max-width to 600px */
+            width: 90%; /* Set width to 90% of the parent container for smaller screens */
+            margin: 2rem auto;
+            padding: 3rem; /* Padding inside the container */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: white; /* White background for the form */
+        }
+
+        h2 {
+            text-align: center; /* Center align the heading */
+            color: #007bff; /* Heading color */
+            margin-bottom: 1.5rem; /* Space below heading */
+        }
+
+        .form-group {
+            margin-bottom: 1rem; /* Space below each form group */
+            padding: 15px; 
+        }
+
+        label {
+            display: block; /* Block display for label */
+            margin-bottom: 0.5rem; /* Space below label */
+            font-weight: bold; /* Bold font for labels */
+            color: #333; /* Darker color for labels */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%; /* Full width input */
+            padding: 0.5rem; /* Padding inside input */
+            font-size: 1rem;
+            border: 1px solid #ccc; /* Border color */
+            border-radius: 4px; /* Rounded corners */
+            box-sizing: border-box; /* Ensure padding doesn't affect width */
+        }
+
+        button {
+            width: 100%; /* Full width button */
+            background-color: #007bff; /* Button background color */
+            color: white; /* Button text color */
+            border: none;
+            padding: 0.5rem; /* Padding inside button */
+            font-size: 1rem;
+            border-radius: 4px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth transition */
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker button color on hover */
+        }
+
+        .login-link {
+            text-align: center; /* Center align the login link */
+            margin-top: 1rem; /* Space above login link */
+        }
+
+        .login-link a {
+            color: #007bff; /* Link color */
+            text-decoration: none; /* No underline for links */
+        }
+
+        .login-link a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        .footer{
+            bottom: 0%;
+            left: 0%;
+        }
+    </style>
+</head>
+<body>
+    <%- include('header', { username: username }) %>
+    <br><br>
+    <div class="signup-page">
+        <h2>Create an Account</h2>
+        <form action="/signup" method="POST">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p class="login-link">
+            Already have an account? <a href="/login">Login</a>
+        </p>
+    </div>
+    <div class="footer">
+        <%- include('footer') %>
+    </div>
+    
+</body>
+</html>

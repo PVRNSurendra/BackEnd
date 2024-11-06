@@ -1,0 +1,59 @@
+<header>
+    <h1>House Rental</h1>
+    <nav>
+        <a href="/home">Home</a>
+        <a href="/search">Search</a>
+        <a href="/list-property">List Your Property</a>
+        <% if (username) { %>
+            <span>Welcome, <%= username %></span>
+            <a href="/logout">Logout</a>
+        <% } else { %>
+            <a href="/login">Login</a>
+            <a href="/signup">Sign Up</a>
+        <% } %>
+    </nav>
+</header>
+
+
+<style>
+    header {
+        background-color: #f8f9fa;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+        padding: 1rem 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 95vw;  
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: x-large;
+    }
+    h1 {
+        margin: 0;
+        font-size: 1.5em;
+        color: #0e12f7;
+        gap: 10px;
+    }
+    nav a {
+        font-size: large;
+        color: #333;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav a:hover {
+        background-color: #007bff;
+        color: white;
+    }
+
+    @media (max-width: 768px) {
+        .header {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1rem;
+        }
+    }
+</style>

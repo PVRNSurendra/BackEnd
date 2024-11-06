@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About House Rentals</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 150px;
+        }
+
+        h2 {
+            color: #007bff;
+            font-size: 1.8rem;
+            margin-top: 0;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .highlights {
+            background-color: #eaf4ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <% if (username) { %>
+        <%- include('header', { username: username }) %>
+    <% } else { %>
+        <%- include('header') %> 
+    <% } %>
+
+<div class="content">
+    <h2>Welcome to Our House Rental Service</h2>
+    <p>Finding a rental property should be a stress-free experience, and our mission is to make the process as smooth as possible. We offer a diverse range of homes available for rent, including apartments, villas, and houses in multiple locations.</p>
+    
+    <div class="highlights">
+        <h3>What We Offer:</h3>
+        <ul>
+            <li>Wide selection of properties across various locations.</li>
+            <li>Affordable rental options to suit every budget.</li>
+            <li>Easy-to-use search features to help you find the right home.</li>
+            <li>Guidance and support through the entire rental process.</li>
+        </ul>
+    </div>
+
+    <h2>Why Choose Us?</h2>
+    <p>Our team is committed to providing quality service to help renters find their ideal home. We understand the importance of location, price, and convenience, and we’re here to help you make the best choice.</p>
+</div>
+
+<footer>
+    <%- include('footer') %>
+</footer>
+
+</body>
+</html>

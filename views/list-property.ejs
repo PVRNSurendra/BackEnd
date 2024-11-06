@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #007bff;
+            text-align: center; /* Center align the heading */
+            margin-bottom: 1.5rem; /* Spacing below the heading */
+        }
+
+        form {
+            max-width: 600px; /* Set maximum width for the form */
+            margin: 100px auto;   /* Center the form */
+            padding: 50px;    /* Add padding for inner spacing */
+            background-color: white; 
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            text-align: center;
+        }
+
+        label {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+            display: block; /* Make label block-level for spacing */
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"],
+        textarea {
+            width: 100%; /* Full width */
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: white;
+            color: black;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease;
+        }
+
+        textarea {
+            resize: vertical; /* Allow vertical resizing */
+            min-height: 100px; /* Minimum height for the textarea */
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #007bff; /* Change border color on focus */
+            outline: none; /* Remove default outline */
+        }
+
+        button {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #007bff; /* Button background color */
+            color: white; /* Button text color */
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Button hover color */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem; /* Reduced padding for smaller screens */
+            }
+
+            h2 {
+                font-size: 1.5rem; /* Smaller heading font size */
+            }
+        }
+
+        .footer{
+            bottom: 0%;
+            left: 0%;
+        }
+    </style>
+</head>
+<body>
+    <%- include('header', { username: username }) %>
+    <br><br>
+    <form action="/list-property" method="POST" enctype="multipart/form-data">
+        <h2>List Your Property</h2>
+        <br><br>
+        <label for="title">Property Title:</label>
+        <input type="text" name="title" id="title">
+        <br><br>
+        <label for="description">Property Description:</label>
+        <textarea name="description" id="description"></textarea>
+        <br><br>
+        <label for="price">Price:</label>
+        <input type="number" name="price" id="price">
+        <br><br>
+        <label for="pimage">Upload Property Image</label>
+        <input type="file" name="pimage" id="pimage">
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <div class="footer">
+        <%- include('footer') %>
+    </div>
+</body>
+</html>

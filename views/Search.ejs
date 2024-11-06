@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        form {
+            max-width: 600px; /* Set maximum width for the form */
+            margin: 100px auto;   /* Center the form */
+            padding: 30px;    /* Add padding for inner spacing */
+            background-color: white; 
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            text-align: center;
+        }
+
+        /* Form Groups */
+        label {
+            font-size: 1rem;  /* Consistent font size for labels */
+            margin-bottom: 5px; /* Spacing below labels */
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"] {
+            width: 60%; /* Full width */
+            padding: 0.5rem; /* Inner padding */
+            font-size: 1rem; /* Font size */
+            border: 1px solid #ccc; /* Light border */
+            border-radius: 4px; /* Rounded corners */
+            background-color: white; /* White background */
+            color: black; /* Text color */
+            margin-bottom: 10px; /* Space between inputs */
+        }
+
+        button {
+            background-color: #3498db; /* Primary button color */
+            color: white; /* Text color */
+            border: none; /* No border */
+            padding: 0.5rem 1rem; /* Padding for button */
+            font-size: 1rem; /* Font size */
+            border-radius: 4px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+            display: block; /* Make button block level for centering */
+            margin: 0 auto; /* Center the button */
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        button:hover {
+            background-color: #2980b9; /* Darker shade on hover */
+        }
+
+        .footer{
+            bottom: 0%;
+            left: 0%;
+        }
+    </style>
+</head>
+<body>
+    <%- include('header', { username: username }) %>
+    <form action="/search" method="POST">
+        <h2>Find your Next Home</h2>
+        <br><br>
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location" placeholder="Where are you going?">
+        <br><br>
+        <label for="check-in">Check-In:</label>
+        <input type="date" name="check-in" id="check-in" placeholder="Select a date">
+        <br><br>
+        <label for="check-out">Check-Out:</label>
+        <input type="date" name="check-out" id="check-out" placeholder="Select a date">
+        <br><br>
+        <label for="guests">Guests:</label>
+        <input type="number" name="guests" id="guests">
+        <br><br>
+        <button type="submit">Search</button>
+    </form>
+    <div class="footer">
+        <%- include('footer') %>
+    </div>
+</body>
+</html>

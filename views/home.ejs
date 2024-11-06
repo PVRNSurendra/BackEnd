@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        .hero-section {
+            position: relative;
+            top: 50px;
+            left: 190px;
+            width: 80%;
+            height: 50vh;
+            background-image: url('https://images.unsplash.com/photo-1496850574977-a4607106a874?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Overlay effect */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Adjust opacity for darker overlay */
+            z-index: 1;
+        }
+
+        /* Centered content */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        /* Main heading */
+        .hero-content h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #fff;
+        }
+
+        /* Subheading text */
+        .hero-content p {
+            font-size: 1.2em;
+            margin-top: 0.5em;
+            color: #dcdcdc;
+        }
+
+        /* Button styling */
+        .hero-content .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 1em;
+            font-size: 1em;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        /* Button hover effect */
+        .hero-content .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Feature Listings Section */
+        .feature-listing {
+            text-align: center; /* Center the title */
+            margin: 2rem auto; /* Margin for spacing */
+            max-width: 80%; /* Limit the width */
+        }
+
+        .feature-listing h2 {
+            font-size: 2em; /* Title size */
+            margin-bottom: 1rem; /* Space below title */
+        }
+
+        .image-container {
+            display: flex; /* Use flexbox for horizontal alignment */
+            justify-content: space-around; /* Space between images */
+            align-items: center; /* Center images vertically */
+            margin-top: 25px;
+        }
+
+        .image-item {
+            text-align: center; /* Center text below images */
+        }
+
+        .image-container img {
+            width: 380px; /* Each image takes up 30% of the container */
+            border-radius: 5px; /* Optional: round corners */
+            height: 300px; /* Fixed height for images */
+        }
+
+        .image-item p {
+            margin-top: 10px; /* Space between image and text */
+            font-size: 1em; /* Text size */
+            color: #333; /* Text color */
+            font-size: large;
+            font-weight: bold;
+            color: white;
+            background-color: rgb(21, 211, 21);
+            border-radius: 10px;
+        }
+
+        .footer{
+            margin-bottom: 0%;
+            left: 0%;
+        }
+    </style>
+</head>
+<body>
+    <%- include('header', { username: username }) %>
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Find Your Perfect Home</h1>
+            <p>Discover amazing rental properties in your area</p>
+            <a href="/search" class="btn">Start Searching</a>
+        </div>
+    </div>
+    <br><br><br><br>
+    <!-- Feature Listing Section -->
+    <div class="feature-listing">
+        <h2>Featured Listing</h2>
+        <br>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="/h1.jpg" alt="Feature 1"> 
+                <p>Luxurious Beach House <br> ₹15,000/month</p>
+            </div>
+            <div class="image-item">
+                <img src="/house2.jpg" alt="Feature 2">
+                <p>Cozy Mountain Cabin <br> ₹10,000/month</p>
+            </div>
+            <div class="image-item">
+                <img src="/houseimage.jpg" alt="Feature 3">
+                <p>Modern City Apartment <br> ₹18,000/month</p>
+            </div>
+        </div>
+        <br>
+        <div>
+            <h2>How It Works</h2>
+            <div style="display: flex;">
+                <div>
+                    <p style="left: 200px; position: relative; font-weight: bold; font-size: x-large; color: rgb(26, 167, 214);">1. Search</p>
+                    <p style="left: 200px; position: relative; font-size: large;">Browse our extensive list of properties.</p>
+                </div>
+
+                <div>
+                    <p style="left: 350px; position: relative; font-weight: bold; font-size: x-large; color: rgb(26, 167, 214);">2. Book</p>
+                    <p style="left: 350px; position: relative; font-size: large;">Reserve your perfect rental with ease.</p>
+                </div>
+
+                <div>
+                    <p style="left: 500px; position: relative; font-weight: bold; font-size: x-large; color: rgb(26, 167, 214);">3. Enjoy</p>
+                    <p style="left: 500px; position: relative; font-size: large;">Relax and enjoy your home away from home.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <%- include('footer') %>
+    </div>
+</body>
+</html>

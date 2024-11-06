@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Houses in Guntur</title>
+  <style>
+    .house-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 85px;
+      margin-left: 50px;
+    }
+
+    .house-card {
+      border: 1px solid #ccc;
+      padding: 15px;
+      text-align: center;
+      border-radius: 10px;
+      padding-top: 30px;
+    }
+
+    .house-card img {
+      max-width: 300px;
+      height: 300px;
+    }
+
+    .message {
+      margin-top: 50px;
+      margin-left: 50px;
+      color: red;
+      font-weight: bold;
+    }
+
+    img{
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <% if (username) { %>
+      <%- include('header', { username: username }) %>
+  <% } else { %>
+      <%- include('header') %> 
+  <% } %>
+
+  <h1 style="margin-top: 50px; margin-left: 50px; margin-bottom: 15px; font-size: xxx-large;">Houses</h1>
+  
+  <% if (houses.length === 0) { %>
+    <p class="message"><%= message %></p>
+  <% } else { %>
+    <div class="house-grid">
+      <% houses.forEach(house => { %>
+        <div class="house-card">
+          <img src="<%= house.imageUrl %>" alt="House Image" onerror="console.error('Error loading: <%= house.imageUrl %>')" />
+          <p><%= house.description %></p>
+          <p><%= house.price %></p>
+        </div>
+      <% }); %>
+    </div>
+  <% } %>
+  
+</body>
+</html>
